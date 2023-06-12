@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const date = require('date-and-time');
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
 
 const now = new Date();
+const month = monthNames[now.getMonth()];
+
 
 router.get('', (req, res) => {
     if (req.query.loc && req.query.icon && req.query.con && req.query.temp) {
@@ -13,7 +16,7 @@ router.get('', (req, res) => {
             weather: req.query.con,
             temperature: req.query.temp,
             icon: req.query.icon,
-            date: date.format(now, 'D, MMM')
+            date: now.getDate() + ', ' + month
         });
     }
 
