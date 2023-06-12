@@ -1,0 +1,20 @@
+html
+    head
+        title= title 
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="stylesheet" href="/style.css")
+    body
+        article.search
+            form(action='/api/weather', method='get')
+                input.search-bar(name='location', type='text', placeholder='Type a city and press enter to search...')
+        article.widget(style='display: ' + display)
+            div.weatherIcon
+                i(class='wi wi-day-' + icon)
+            div.weatherInfo
+                div.temperature 
+                    span #{temperature}&deg;
+                div.description    
+                    div.weatherCondition= weather
+                    div.place= location
+            div.date= date
