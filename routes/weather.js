@@ -15,7 +15,7 @@ router.get('', (req, res) => {
         uri: 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/',
         qs: {
             location: req.query.location,
-            key: config.get('apikey') // -> uri + '?access_token=xxxxx%20xxxxx'
+            key: config.get('apikey') || process.env.APIKEY // -> uri + '?access_token=xxxxx%20xxxxx'
         },
         headers: {
             'User-Agent': 'Request-Promise'
