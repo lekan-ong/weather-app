@@ -20,4 +20,7 @@ app.set('view engine', 'pug');
 // Set public dir
 app.use(express.static(path.join(__dirname, "public")));
 
+app.keepAliveTimeout = 120 * 1000;
+app.headersTimeout = 120 * 1000;
+
 app.listen(port, () => console.log(`App is running on port ${port}`));
