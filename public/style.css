@@ -56,6 +56,7 @@
 	 width: 100%;
 	 height: 100%;
 	 justify-content: center;
+	 text-align: center;
 }
  .widget .weatherInfo .description .weatherCondition {
 	 text-transform: uppercase;

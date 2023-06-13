@@ -6,15 +6,17 @@ html
         link(rel="stylesheet" href="./style.css")
     body
         article.search
-            form(action='/api/weather', method='get')
+            form#searchForm(action='/api/weather', method='get')
                 input.search-bar(name='location', type='text', placeholder='Type a city and press enter to search...')
         article.widget(style='display: ' + display)
             div.weatherIcon
-                img(src='./images/icons/' + icon + '.png')
+                img#weatherImage(src='./images/icons/' + icon + '.png')
             div.weatherInfo
                 div.temperature 
-                    span #{temperature}&deg;
+                    span#temp
                 div.description    
                     div.weatherCondition= weather
-                    div.place= location
+                    div.place
             div.date= date
+        script(src='./jquery-3.7.0.min.js', type='text/javascript')
+        script(src='./script.js', type='text/javascript')

@@ -25,21 +25,18 @@ router.get('', (req, res) => {
 
     request(options)
     .then((response) => {
-        // Redirect to home page with relevant data
+        // Return data object
         const fullLocation = response.resolvedAddress;
         const temperature = response.days[0].temp;
         const condition = response.days[0].conditions;
         const icon = response.days[0].icon;
 
-        return res.redirect(url.format({
-            pathname: "/",
-            query:  {
-                "loc": fullLocation,
-                "temp": temperature,
-                "con": condition,
-                "icon": icon
-            }
-        }));
+        return res.send({
+            "location": fullLocation,
+            "temperature": temperature,
+            "condition": condition,
+            "icon": icon
+        });
     })
     .catch((err) => {
         // API call failed...
