@@ -36,5 +36,5 @@ To run this project, you will need to add the following environment variables to
 
 ## Roadmap
 
-- Migrate to AJAX requests
+- ~~Migrate to AJAX requests~~
 
