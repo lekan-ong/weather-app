@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
- @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+
  body {
 	 background-color: #a64253;
 	 font-family: Poiret One;
@@ -23,14 +23,15 @@
 	 border-top-left-radius: 20px;
 	 border-top-right-radius: 20px;
 	 background: #fafafa;
-	 font-family: weathericons;
 	 display: flex;
 	 align-items: center;
 	 justify-content: space-around;
-	 font-size: 100px;
 }
- .widget .weatherIcon i {
-	 padding-top: 30px;
+.widget .weatherIcon img {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 130px;
+	height: auto;
 }
  .widget .weatherInfo {
 	 flex: 0 0 70%;

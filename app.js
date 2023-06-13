@@ -1,7 +1,6 @@
 const express = require('express');
 const index = require('./routes/index');
 const weather = require('./routes/weather');
-const path = require("path");
 const helmet = require('helmet');
 
 const app = express();
@@ -18,7 +17,7 @@ app.use('/api/weather', weather);
 app.set('view engine', 'pug');
 
 // Set public dir
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('./public'));
 
 app.keepAliveTimeout = 120 * 1000;
 app.headersTimeout = 120 * 1000;
