@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const request = require('request-promise-native');
 const Joi = require('joi');
-const url = require('url');
 const config = require('config');
 
 
